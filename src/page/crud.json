@@ -1,0 +1,178 @@
+{
+	"type": "page",
+	"body": [
+		{
+			"type": "crud",
+			"api": "abc",
+			"columns": [
+				{
+					"name": "id",
+					"label": "ID",
+					"type": "text"
+				},
+				{
+					"name": "ccc",
+					"label": "渲染引擎",
+					"type": "text"
+				},
+				{
+					"type": "text",
+					"label": "name",
+					"name": "abc"
+				},
+				{
+					"type": "operation",
+					"label": "操作",
+					"buttons": [
+						{
+							"label": "编辑",
+							"type": "button",
+							"actionType": "dialog",
+							"level": "link",
+							"dialog": {
+								"title": "编辑",
+								"body": {
+									"type": "form",
+									"api": "xxx/update",
+									"body": [
+										{
+											"name": "id",
+											"label": "ID",
+											"type": "input-text"
+										},
+										{
+											"name": "ccc",
+											"label": "渲染引擎",
+											"type": "input-text"
+										},
+										{
+											"label": "name",
+											"name": "abc",
+											"type": "input-text"
+										}
+									]
+								}
+							}
+						},
+						{
+							"label": "查看",
+							"type": "button",
+							"actionType": "dialog",
+							"level": "link",
+							"dialog": {
+								"title": "查看详情",
+								"body": {
+									"type": "form",
+									"api": "xxx/update",
+									"body": [
+										{
+											"name": "id",
+											"label": "ID",
+											"type": "static"
+										},
+										{
+											"name": "ccc",
+											"label": "渲染引擎",
+											"type": "static"
+										},
+										{
+											"label": "name",
+											"name": "abc",
+											"type": "static"
+										}
+									]
+								}
+							}
+						}
+					]
+				}
+			],
+			"bulkActions": [
+				{
+					"type": "button",
+					"level": "danger",
+					"label": "批量删除",
+					"actionType": "ajax",
+					"confirmText": "确定要删除？",
+					"api": "/xxx/batch-delete"
+				},
+				{
+					"type": "button",
+					"label": "批量编辑",
+					"actionType": "dialog",
+					"dialog": {
+						"title": "批量编辑",
+						"size": "md",
+						"body": {
+							"type": "form",
+							"api": "/xxx/bacth-edit",
+							"body": [
+								{
+									"label": "字段1",
+									"text": "字段1",
+									"type": "input-text"
+								}
+							]
+						}
+					}
+				}
+			],
+			"itemActions": [
+			],
+			"features": [
+				"create",
+				"filter",
+				"bulkDelete",
+				"bulkUpdate",
+				"update",
+				"view"
+			],
+			"filterColumnCount": 3,
+			"headerToolbar": [
+				{
+					"label": "新增",
+					"type": "button",
+					"actionType": "dialog",
+					"level": "primary",
+					"dialog": {
+						"title": "新增",
+						"body": {
+							"type": "form",
+							"api": "POST:abc",
+							"body": [
+								{
+									"type": "input-text",
+									"name": "id",
+									"label": "ID"
+								},
+								{
+									"type": "input-text",
+									"name": "ccc",
+									"label": "渲染引擎"
+								},
+								{
+									"type": "input-text",
+									"name": "abc",
+									"label": "name"
+								}
+							]
+						}
+					}
+				},
+				"bulkActions",
+				"pagination"
+			]
+		}
+	],
+	"messages": {
+		"fetchSuccess": "aaa",
+		"fetchFailed": "aaa",
+		"saveSuccess": "cc"
+	},
+	"style": {
+	},
+	"title": "abc",
+	"subTitle": "aaaaa",
+	"remark": "aaaaaaaaa",
+	"initApi": "/aaaa"
+}
